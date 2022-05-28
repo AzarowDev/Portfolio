@@ -16,8 +16,10 @@ export const Navbar = () => {
 
     const navbar: navbarType = [
         { path: '/', name: 'Home'},
-        { path: '/achievements', name: 'Achivements'},
-        { path: '/about-me', name: 'About Me'}
+        { path: '/about-me', name: 'About Me'},
+        { path: 'services', name: 'Services'},
+        { path: '/achievements', name: 'Achievements'},
+        { path: '/contact', name: 'Contact'}
     ]
 
     return (

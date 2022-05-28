@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Head>
       <title>Nas-Studio</title>
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
     </Head>
     <Navbar></Navbar>
     <Component {...pageProps} />

@@ -50,7 +50,7 @@ export const Navbar = () => {
                                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                                     {navbar.map((item) => (
                                         <NavLink href={item.path} className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                        <a className={router.pathname == item.path ? "border-indigo-500 text-gray-900 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" : "border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"}>
+                                        <a className={router.pathname == item.path ? "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" : "border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"}>
                                     {item.name}
                                         </a>
                                         </NavLink>

@@ -3,12 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import { Camera } from 'react-feather'
 
 const Home: NextPage = () => {
   return (
       <main>
-        <h1><Camera />Script component examples</h1>
+        <h1>Script component examples</h1>
         <ul>
           <li>
             <Link href="/test">

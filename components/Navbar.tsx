@@ -1,10 +1,11 @@
 import React from 'react'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import NavLink from 'next/link'
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import Link from './NoScrollLink'
 import { useRouter } from 'next/router'
 import { navbarType } from '../types'
+import { AnimateSharedLayout, motion } from 'framer-motion'
+import { isActiveLink } from '../lib/utils'
 
 function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
@@ -17,7 +18,7 @@ export const Navbar = () => {
     const navbar: navbarType = [
         { path: '/', name: 'Home'},
         { path: '/about-me', name: 'About Me'},
-        { path: 'services', name: 'Services'},
+        { path: '/services', name: 'Services'},
         { path: '/achievements', name: 'Achievements'},
         { path: '/contact', name: 'Contact'}
     ]
@@ -40,22 +41,27 @@ export const Navbar = () => {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <img
-                                        className="hidden lg:block h-8 w-auto"
-                                        src="logo.svg"
-                                        alt="Workflow"
-                                    />
+                                    <img className="hidden lg:block h-8 w-auto" src="logo.svg" />
                                 </div>
 
-                                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                                    {navbar.map((item) => (
-                                        <NavLink href={item.path} className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                        <a className={router.pathname == item.path ? "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" : "border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"}>
-                                    {item.name}
-                                        </a>
-                                        </NavLink>
+                                <AnimateSharedLayout>
+                                    <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
+                                        {navbar.map((item) => (
+                                            <Link key={item.name} href={item.path}>
+                                                <a className="border-transparent text-gray-900 inline items-center px-1 pt-6 border-b-2 text-sm font-medium">
+                                                    {item.name}
+                                                    {isActiveLink(item.path, router.pathname) && (
+                                                        <motion.div
+                                                            layoutId='boder-indigo-500'
+                                                            className='border-indigo-500 text-gray-900 items-center px-1 pt-1 border-b-2 text-sm font-medium'
+                                                            animate
+                                                            />
+                                                    )}
+                                                </a>
+                                            </Link>
                                         ))}
-                                </div>
+                                    </div>
+                                </AnimateSharedLayout>
                             </div>
                         </div>
                     </div>

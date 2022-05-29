@@ -6,6 +6,13 @@ const Contact = () => {
         <div>
             <NextSeo title='Contact' />
             <h1>Contact</h1>
+
+            <form>
+                <label>
+                    Nom:
+                </label>
+                <input type='submit' value='Send' />
+            </form>
         </div>
     )
 }

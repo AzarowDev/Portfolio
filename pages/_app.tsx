@@ -2,8 +2,9 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Navbar } from '../components/Navbar'
 import Head from 'next/head'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { DefaultSeo, NextSeo } from 'next-seo'
+import Transitions from '../components/transitions'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://127.0.0.1:3000${router.route}`
@@ -14,13 +15,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <DefaultSeo
       titleTemplate='%s - Nas-Studio'/>
     <Navbar />
-    <AnimatePresence
-      exitBeforeEnter
-      initial={false}
-      onExitComplete={() => window.scrollTo(0, 0)}
-      >
-    <Component {...pageProps} canonical={url} key={url} />
-    </AnimatePresence>
+    <Component {...pageProps} canonical={url} key={router.route} />
   </>
 }
 

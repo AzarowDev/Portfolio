@@ -1,18 +1,14 @@
 import { NextSeo } from 'next-seo'
 import React from 'react'
+import Transitions from '../components/transitions'
 
 const Contact = () => {
     return (
         <div>
             <NextSeo title='Contact' />
+            <Transitions>
             <h1>Contact</h1>
-
-            <form>
-                <label>
-                    Nom:
-                </label>
-                <input type='submit' value='Send' />
-            </form>
+            </Transitions>
         </div>
     )
 }

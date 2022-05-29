@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
+import Transitions from '../components/transitions'
 
 const Home: NextPage = () => {
   return (
       <div>
         <NextSeo title='Home' />
-
+        <Transitions>
         <main className="lg:relative">
             <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-5xl">
@@ -39,6 +40,7 @@ const Home: NextPage = () => {
                   <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Heading picture" className="absolute inset-0 w-full h-full object-cover" />
                 </div>
           </main>
+          </Transitions>
       </div>
   )
 }

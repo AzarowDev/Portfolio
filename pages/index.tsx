@@ -15,7 +15,7 @@ const Home: NextPage = () => {
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-2 md:text-xl lg:mx-0">
                 Développeur d'applications web depuis 2020 ! <br />
-                Je travail principalement avec AdonisJs/Laravel pour la partie backend et react pour la partie frontend
+                Je travail principalement avec AdonisJs et Laravel pour la partie backend et react pour la partie frontend
               </p>
               <div className="mt-5 sm:mt-4 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">

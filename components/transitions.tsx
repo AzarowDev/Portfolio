@@ -6,7 +6,7 @@ const animationConfiguration = {
     exit: { opacity: 0 },
 }
 
-const Transitions = ( { children } ) => {
+const Transitions = ( { children }: any ) => {
     return (
         <motion.div
             variants={animationConfiguration}
